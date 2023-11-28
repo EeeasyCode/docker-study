@@ -1,0 +1,5 @@
+<MySQL Docker 컨테이너 생성>
+
+Step 1. MySQL Docker 이미지를 Docker Hub에서 가져옴
+> docker pull mysql:latest
+
