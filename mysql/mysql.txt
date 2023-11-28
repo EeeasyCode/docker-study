@@ -3,3 +3,5 @@
 Step 1. MySQL Docker 이미지를 Docker Hub에서 가져옴
 > docker pull mysql:latest
 
+Step 2. DockerFile 작성
+> MySQL을 실행하기 위해 사용할 DockerFile을 작성
