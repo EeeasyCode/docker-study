@@ -5,3 +5,17 @@ Step 1. MySQL Docker 이미지를 Docker Hub에서 가져옴
 
 Step 2. DockerFile 작성
 > MySQL을 실행하기 위해 사용할 DockerFile을 작성
+
+Step 3. Docker Image 빌드
+> 작성한 DockerFile을 사용하여 Image 빌드
+> docker build -t {빌드할 이미지 이름} .
+
+Step 4. Docker Container 실행
+> 빌드한 Dokcer Image를 기반으로 컨테이너 실행
+> docker run -d --name {빌드할 컨테이너 이름} -p 3306:3306 {사용할 이미지 이름}
+
+Step 5. Database 설정
+> docker exec -it {컨테이너 이름} bash // 실행한 컨테이너 접속 명령어
+
+# docker db 보존
+docker run -d --name {docker-container-name} -p 3306:3306 -v /my/mysql/data:/var/lib/mysql {docker-image-name}
