@@ -1,1 +1,19 @@
 # MySQL 및 Docker Compose를 사용하여 다중 컨테이너 앱 만들기
+
+<다중 컨테이너 환경 사용 이유>
+-> 각각의 컨테이너마다 한 가지 작업을 수행할 수 있도록 분리하기 위함
+
+컨테이너는 기본적으로 격리된 상태로 실행됨 
+-> 컨테이너 간 통신을 하기 위해서는 같은 네트워크에 속해야 함
+
+<docker network 생성 명령어>
+> docker network create {사용할 이름}
+
+<생성된 network 확인>
+> docker network ls
+
+<기존에 생성된 컨테이너를 네트워크에 연결하는 명령어>
+> docker network connect {연결할 네트워크} {연결할 컨테이너}
+
+<컨테이너를 실행할 때 네트워크에 연결하는 명령어>
+> docker run -d --network todo-app
